@@ -1,0 +1,24 @@
+.hamburger {
+	align-items: flex-start;
+	width: fit-content;
+	position: fixed;
+	right: 11vw;
+	top: 9vh;
+
+	& > div {
+		height: 0.3rem;
+		background-color: #5ef06d;
+		margin: 0.2rem 0;
+		border-radius: 40px;
+	}
+
+    &  > div:nth-child(1),
+    & > div:nth-child(3) {
+        width: 2rem;
+    }
+
+    & > div:nth-child(2) {
+        width: 1.5rem;
+        margin-left: auto;
+    }
+}

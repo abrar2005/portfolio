@@ -1,0 +1,36 @@
+@use '../util' as u;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: u.$paragraph_font;
+    margin: 0;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-y: hidden;
+}
+
+img {
+	display: block;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+
+}
+
+
+main {
+    overflow-y: scroll;
+    height: calc(100vh);
+    // scroll-snap-points-y: repeat(calc(100vh - 2rem));
+    scroll-snap-type: y mandatory;
+}
