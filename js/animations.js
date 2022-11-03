@@ -1,5 +1,3 @@
-sal();
-
 // ===============================================
 
 //  TYPING ANIMATION FROM @artrugh | CODEPEN
