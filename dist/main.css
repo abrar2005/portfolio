@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&family=Fira+Mono:wght@400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Fira Mono", monospace;
+  margin: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-y: hidden;
+}
+
+img {
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+main {
+  overflow-y: scroll;
+  height: 100vh;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Finger Paint", cursive;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 8rem;
+  line-height: 180%;
+  max-width: 7.7em;
+}
+
+h2 {
+  font-size: 3em;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+h4 {
+  font-size: 1.6em;
+}
+
+h5 {
+  font-size: 1.4em;
+}
+
+p {
+  font-size: 1.25em;
+  margin-bottom: 2rem;
+  line-height: 185%;
+}
+
+.hamburger {
+  align-items: flex-start;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  right: 11vw;
+  top: 9vh;
+}
+.hamburger > div {
+  height: 0.3rem;
+  background-color: #5ef06d;
+  margin: 0.2rem 0;
+  border-radius: 40px;
+}
+.hamburger > div:nth-child(1), .hamburger > div:nth-child(3) {
+  width: 2rem;
+}
+.hamburger > div:nth-child(2) {
+  width: 1.5rem;
+  margin-left: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 34px;
+  grid-row-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  margin-inline: auto;
+}
+.grid svg {
+  margin-inline: auto;
+  width: 8rem;
+  padding: 1rem;
+  cursor: default;
+  fill: #d9d9d9;
+}
+.grid svg:hover {
+  fill: var(--bg);
+  transition: all 250ms ease-in-out;
+}
+.grid .html {
+  --bg: #dd4b25;
+}
+.grid .sass {
+  --bg: #c36291;
+  grid-row: 1/1;
+  grid-column: 3/4;
+}
+.grid .js {
+  --bg: #ead41c;
+  grid-row: 1;
+  grid-column: 5/6;
+}
+.grid .php {
+  --bg: #828cb4;
+  grid-row: 2/2;
+  grid-column: 2/3;
+  transform: scale(1.4);
+}
+.grid .node {
+  --bg: #63975e;
+  grid-row: 2/2;
+  grid-column: 4/5;
+}
+
+form *:focus {
+  outline: none;
+}
+
+.form {
+  width: 500px;
+  margin-inline: auto;
+}
+.form-item {
+  position: relative;
+  margin-bottom: 15px;
+}
+.form-item input,
+.form-item textarea {
+  display: block;
+  width: 400px;
+  height: 42px;
+  background: transparent;
+  border: solid 1px hsl(0deg, 0%, 85%);
+  transition: all 0.3s ease;
+  padding: 0 15px;
+  margin-bottom: 2rem;
+  resize: none;
+}
+.form-item input:focus,
+.form-item textarea:focus {
+  border-color: hsl(126deg, 83%, 65%);
+}
+.form-item textarea {
+  height: 10rem;
+  padding-top: 15px;
+}
+.form-item label {
+  font-size: 1em;
+  font-family: "Fira Mono", monospace;
+  background: #fff;
+  color: hsl(0deg, 0%, 85%);
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+}
+.form-item input:focus + label, .form-item input:valid + label, .form-item textarea:focus + label, .form-item textarea:valid + label {
+  font-size: 1rem;
+  top: -10px;
+}
+.form-item input:focus + label,
+.form-item textarea:focus + label {
+  color: hsl(126deg, 83%, 65%);
+}
+
+/* From uiverse.io by @adamgiebl */
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: hsl(0deg, 0%, 85%);
+  color: white;
+  padding: 0.5em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: flex-end;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+button:hover {
+  background-color: hsl(126deg, 83%, 65%);
+}
+button:hover .svg-wrapper {
+  -webkit-animation: fly-1 0.6s ease-in-out infinite alternate;
+          animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@-webkit-keyframes fly-1 {
+  from {
+    transform: translateY(0.3em);
+    transform: translateX(0.4em);
+  }
+  to {
+    transform: translateY(-0.3em);
+    transform: translateX(-0.4em);
+  }
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.3em);
+    transform: translateX(0.4em);
+  }
+  to {
+    transform: translateY(-0.3em);
+    transform: translateX(-0.4em);
+  }
+}
+section {
+  scroll-snap-align: start;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding-top: 5rem;
+  height: 100vh;
+  padding-inline: 5rem;
+  width: calc(100vw - 2rem);
+  margin-inline: auto;
+}
+section .arrow {
+  position: fixed;
+  bottom: 2rem;
+  right: 10rem;
+  border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 10rem;
+  cursor: pointer;
+  background: none;
+}
+section .arrow::before {
+  content: url(../../img/back-arrow.svg);
+}
+section p {
+  width: 80%;
+}
+
+#experience img {
+  width: 40rem;
+  filter: saturate(0);
+  transition: filter 300ms;
+}
+
+#experience img:hover {
+  filter: saturate(1);
+}
+
+:root {
+  --mySize: 52px;
+}
+
+.svgbox {
+  width: 20vw;
+  margin: 0;
+  padding: 0;
+}
+
+#letters path {
+  fill: none;
+}
+
+#letters #dot {
+  fill: none;
+  opacity: 0;
+}
+
+.mydot {
+  fill: none;
+}
+
+.wrapper {
+  margin-top: 0;
+  perspective: 800px;
+  visibility: hidden;
+}/*# sourceMappingURL=main.css.map */

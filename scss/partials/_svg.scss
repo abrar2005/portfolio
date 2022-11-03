@@ -1,0 +1,31 @@
+:root {
+    --mySize: 52px;
+  }
+  
+  .svgbox {
+    width: 20vw;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  
+  #letters path {
+    fill: none;
+  }
+  
+  #letters #dot {
+    fill: none;
+    opacity: 0;
+  }
+  
+  .mydot {
+    fill: none;
+  }
+  
+  .wrapper {
+    margin-top: 0;
+    perspective: 800px;
+    visibility: hidden;
+  }
+  

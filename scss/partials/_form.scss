@@ -1,0 +1,65 @@
+@use "../util" as u;
+
+form *:focus {
+	outline: none;
+}
+
+.form {
+	width: 500px;
+	margin-inline: auto;
+
+	&-item {
+		position: relative;
+		margin-bottom: 15px;
+
+		input,
+		textarea {
+			display: block;
+			width: 400px;
+			height: 42px;
+			background: transparent;
+			border: solid 1px u.$tat-clr;
+			transition: all 0.3s ease;
+			padding: 0 15px;
+			margin-bottom: 2rem;
+			resize: none;
+
+			&:focus {
+				border-color: u.$pri-clr;
+			}
+		}
+
+		textarea {
+			height: 10rem;
+			padding-top: 15px;
+		}
+
+		& label {
+			font-size: 1em;
+			font-family: u.$paragraph_font;
+			background: #fff;
+			color: u.$tat-clr;
+
+			position: absolute;
+			cursor: text;
+			z-index: 2;
+			top: 13px;
+			left: 10px;
+			padding: 0 10px;
+			transition: all 0.3s ease;
+		}
+
+		& input:focus + label,
+		& input:valid + label,
+		& textarea:focus + label,
+		& textarea:valid + label {
+			font-size: 1rem;
+			top: -10px;
+		}
+
+		input:focus + label,
+		textarea:focus + label {
+			color: u.$pri-clr;
+		}
+	}
+}
