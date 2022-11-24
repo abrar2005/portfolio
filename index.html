@@ -151,20 +151,21 @@
 				>
 					Contact me :)
 				</h2>
-				<form action="">
+				<form name="contact" method="post" data-netlify="true" action="">
 					<div class="form">
 						<div class="form-item">
-							<input type="text" id="Name" autocomplete="off" required />
+							<input name="name" type="text" id="Name" autocomplete="off" required />
 							<label for="Name">Name</label>
 						</div>
 
 						<div class="form-item">
-							<input type="text" id="Email" autocomplete="off" required />
+							<input name="email" type="text" id="Email" autocomplete="off" required />
 							<label for="Email">Email</label>
 						</div>
 
 						<div class="form-item">
 							<textarea
+								name="message"
 								type="text"
 								id="Message"
 								autocomplete="off"
